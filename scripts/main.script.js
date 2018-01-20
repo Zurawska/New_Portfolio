@@ -9,7 +9,7 @@ $(document).ready(function() {
         $('.nav-menu').toggleClass('clicked');
         $('.nav-mobile-btn-bar').toggleClass('clicked');
     });
-    
+
     // slider
     var slideIndex = 1;
         showSlides(slideIndex);
@@ -32,4 +32,27 @@ $(document).ready(function() {
     $('.next').click(function() {
         plusSlides(1);
     });
+
+    // flip
+    var cardHeight;
+    // Sets the height of the back of the card to match the image in front
+    function setBackHeight() {
+        cardHeight = $('.card .front').height();
+        $('.card .back').height(cardHeight);
+    }
+    //Swap behavior of hover with click on touch devices
+	if (Modernizr.touch){
+		$('.card').on('click', function() {
+            $(this).toggleClass('not-flipped');
+		});
+	} else {
+		$('.card').hover(function() {
+			$(this).toggleClass('not-flipped');
+		});
+	}
+    // On window change, recalculate the size of the box
+    window.onresize = function(){
+        setBackHeight();
+    };
+    setBackHeight();
 });
