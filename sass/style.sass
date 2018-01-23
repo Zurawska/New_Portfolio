@@ -29,6 +29,18 @@ p
 $primary-color: #d7123d
 $second-color: #303030
 $third-color: #fff
+// animation created for all sections
+.section_animation
+    opacity: 1
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+body
+    section
+        -webkit-transform: translateY(10%)
+        transform: translateY(10%)
+        opacity: 0
+        -webkit-transition: 1s ease-in-out
+        transition: 1s ease-in-out
 
 //NAVIGATION
 .nav-mobile-btn-bar
@@ -212,14 +224,15 @@ $third-color: #fff
 // CONTACT-INFO
 .contact-info
     margin-top: 10%
-    padding: 50px 30px
     background-color: $primary-color
     .separator
         background: $third-color
+        margin-left: 10%
     h2
         color: $third-color
+        padding: 10% 0 0 10%
 .social-media
-    margin: 50px 0
+    margin: 10% 0 15% 0
     text-align: center
     i
         margin: 10px
@@ -233,9 +246,7 @@ $third-color: #fff
 a
     &:-webkit-any-link
         text-decoration: none
-
-// FOOTER
-footer
+.footer
     background-color: $second-color
     color: $third-color
     text-align: center

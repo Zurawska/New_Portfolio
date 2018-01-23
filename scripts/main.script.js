@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-// navigation
+    // navigation
     $('button.nav-mobile-btn').click(function() {
         $('.nav-menu').toggleClass('clicked');
         $('.nav-mobile-btn-bar').toggleClass('clicked');
@@ -55,4 +54,21 @@ $(document).ready(function() {
         setBackHeight();
     };
     setBackHeight();
+
+    // section animation
+    function sectionAnimation(section) {
+        var $window = $(window);
+        $window.on('scroll load', function() {
+            var pad = Math.max(0, $window.height() - 50);
+            var scrollTop = $window.scrollTop();
+
+            if (!section.hasClass('section_animation') && $window.scrollTop() + pad > section.offset().top) {
+              section.addClass('section_animation');
+              return;
+            }
+        });
+    }
+    sectionAnimation($('#works'));
+    sectionAnimation($('#skills'));
+    sectionAnimation($('#contact'));
 });
