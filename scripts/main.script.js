@@ -9,6 +9,13 @@ $(document).ready(function() {
         $('.nav-mobile-btn-bar').toggleClass('clicked');
     });
 
+    // setting max height for divs in slider
+    var elementHeights = $('.fade').map(function() {
+        return $(this).height();
+    }).get();
+    var maxHeight = Math.max.apply(null, elementHeights);
+    $('.fade').height(maxHeight);
+
     // slider
     var slideIndex = 1;
         showSlides(slideIndex);
