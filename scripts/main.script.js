@@ -9,6 +9,16 @@ $(document).ready(function() {
         $('.nav-mobile-btn-bar').toggleClass('clicked');
     });
 
+    // add shadow to navigation when scroll
+    var $document = $(document);
+    $document.scroll(function() {
+    if ($document.scrollTop() >= 50) {
+        $('.nav-menu').addClass('.shadow');
+    } else {
+        $('.nav-menu').removeClass('.shadow');
+    }
+    });
+
     // setting max height for divs in slider
     var elementHeights = $('.fade').map(function() {
         return $(this).height();

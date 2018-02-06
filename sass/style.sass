@@ -66,7 +66,7 @@ body
     background-color: $primary-color
 .icon-bar+.icon-bar
     margin-top: 4px
-.left-menu, .right-menu
+ul
     margin: 0
     li
         list-style: none
@@ -95,7 +95,48 @@ body
         transition: opacity 0.1s, transform 0.3s
         opacity: 1
         z-index: 1
-
+@media (min-width: 1200px)
+    .nav-mobile-btn-bar
+        display: none
+    .nav-menu
+        opacity: 1
+        width: 100%
+        text-align: center
+        z-index: 1
+        top: 0
+        box-shadow: none
+        transform: translateY(0)
+        transition: none
+    &.shadow
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+    ul
+        display: inline-block
+        li
+            display: inline-block
+            padding: 20px
+            a
+                position: relative
+                &:before
+                    z-index: -1
+                    transition: all 350ms
+                    -webkit-transition: all 350ms
+                    -moz-transition: all 350ms
+                    -o-transition: all 350ms
+                    height: 4px
+                    border-radius: 2px
+                    background-color: $primary-color
+                    display: block
+                    content: ""
+                    height: 4px
+                    position: absolute
+                    top: 100%
+                    left: -50%
+                    opacity: 0
+                &:hover
+                    &::before
+                            width: 120%
+                            opacity: 1
+                            left: -10%
 //SLOGAN
 .slogan
     height: 100vh
