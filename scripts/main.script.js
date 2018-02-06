@@ -13,9 +13,9 @@ $(document).ready(function() {
     var $document = $(document);
     $document.scroll(function() {
     if ($document.scrollTop() >= 50) {
-        $('.nav-menu').addClass('.shadow');
+        $('.nav-menu').addClass('shadow');
     } else {
-        $('.nav-menu').removeClass('.shadow');
+        $('.nav-menu').removeClass('shadow');
     }
     });
 
