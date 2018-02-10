@@ -156,12 +156,16 @@ ul
     .separator
         margin-left: 50%
         transform: translate(-50%,0)
+.side-header
+    display: none
+.media
+    display: none
 @media (min-width: 1200px)
     .about
         padding: 0 30%
     .slogan-content
-        top: 30%
-        transform: translate(0, -30%)
+        top: 35%
+        transform: translate(0, -35%)
     .line
         background-color: #242424
         position: absolute
@@ -175,6 +179,55 @@ ul
         left: 50%
     .line-3
         left: 75%
+    .get-in-touch
+        position: absolute
+        display: flex
+        top: 35%
+        right: 20px
+        z-index: 10
+        -webkit-box-orient: vertical
+        flex-direction: column
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        i
+            color: $second-color
+            font-size: 18px
+            padding: 5px
+            &:hover
+                color: $primary-color
+    .side-header
+        display: block
+        color: #d7d7d7
+        font-size: 12px
+        font-weight: 900 !important
+        letter-spacing: 2px
+        text-transform: uppercase
+        white-space: nowrap
+        position: absolute
+        -webkit-transform: rotate(90deg)
+        transform: rotate(90deg)
+        -webkit-transform-origin: bottom left
+        transform-origin: bottom left
+        left: 24%
+        &::before
+            background-color: #242424
+            content: ""
+            display: inline-block
+            height: 2px
+            position: relative
+            vertical-align: middle
+            width: 80px
+            right: 5px
+        &::after
+            background-color: #242424
+            content: ""
+            display: inline-block
+            height: 2px
+            position: relative
+            vertical-align: middle
+            width: 80px
+            left: 5px
 
 //PROJECTS
 .projects
