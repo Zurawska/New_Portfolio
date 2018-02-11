@@ -222,7 +222,7 @@ ul
             height: 2px
             position: relative
             vertical-align: middle
-            width: 80px
+            width: 50px
             right: 5px
         &::after
             background-color: #242424
@@ -231,7 +231,7 @@ ul
             height: 2px
             position: relative
             vertical-align: middle
-            width: 80px
+            width: 50px
             left: 5px
 
 //PROJECTS
@@ -318,11 +318,14 @@ ul
         -webkit-box-orient: horizontal
         flex-direction: row
         align-items: center
-@media (min-width: 800px) and (max-width: 1199px)
+@media (min-width: 768px) and (max-width: 1199px)
     .projects
         padding: 10% 22%
 
 // KNOWLEDGE
+.knowledge
+    .line
+        display: none
 .skills-description
     padding: 10%
 .flex-container
@@ -335,7 +338,7 @@ ul
     padding-bottom: 75%
     perspective: 1000px
 .box
-    min-width: 300px
+    width: 70%
 .card
     .front, .back
         position: absolute
@@ -368,7 +371,8 @@ ul
     .back
         transform: rotateY(180deg)
 .technology
-    padding-top: 25%
+    margin-top: 40%
+    transform: translate(0, -60%)
     i
         color: $primary-color
         font-size: 56px
@@ -379,11 +383,22 @@ ul
 @media (min-width: 1200px)
     .knowledge
         padding-bottom: 10%
+        .line
+            display: block
         .side-header
             top: 35%
     .skills-description
         padding: 10% 30%
-
+    .box
+        width: 17%
+@media (min-width: 768px) and (max-width: 1199px)
+    .knowledge
+        padding: 0 15%
+    .box
+        width: 40%
+@media (min-width: 576px) and (max-width: 768px)
+    .box
+        width: 40%
 // CONTACT-INFO
 .contact-info
     margin-top: 10%
@@ -391,6 +406,8 @@ ul
     .separator
         background: $third-color
         margin-left: 10%
+    .line
+        display: none
     h2
         color: $third-color
         padding: 10% 0 0 10%
@@ -409,6 +426,25 @@ ul
 a
     &:-webkit-any-link
         text-decoration: none
+@media (min-width: 1200px)
+    .contact-info
+        margin: 0
+        .line
+            display: block
+            background-color: $third-color
+        .side-header
+            top: 20%
+            &::before
+                background-color: $third-color
+            &::after
+                background-color: $third-color
+    .contact-content
+        margin: 0 30%
+@media (min-width: 768px) and (max-width: 1199px)
+    .contact-info
+        padding: 0 15%
+
+// FOOTER
 footer
     background-color: $second-color
     color: $third-color
