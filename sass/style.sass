@@ -249,8 +249,10 @@ ul
 .slideshow-container
     max-width: 1000px
     position: relative
+    a
+        flex: 4
     img
-        max-width: 100%
+        width: 100%
         vertical-align: middle
         filter: grayscale(100%)
 .prev, .next
@@ -269,6 +271,7 @@ ul
     font-size: 14px
     padding: 30px 0
     line-height: 21px
+    flex: 1
 .numbertext
     font-size: 56px
     font-weight: 900 !important
@@ -295,6 +298,14 @@ ul
         opacity: 1
         -webkit-transform: translateX(0)
         transform: translateX(0)
+@media (min-width: 1600px)
+    .slideshow-container
+        max-width: 800px
+@media (min-width: 1200px) and (max-width: 1599px)
+    .slideshow-container
+        max-width: 600px
+        padding-left: 3%
+        margin: 0 auto
 @media (min-width: 1200px)
     .projects
         margin: 0
@@ -309,8 +320,6 @@ ul
             &::after
                 background-color: $third-color
     .slideshow-container
-        max-width: 600px
-        position: relative
         margin: 0 auto
     .text
         margin-left: 5%
