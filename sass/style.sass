@@ -16,6 +16,7 @@ h1
     font-size: 15px
 h2
     font-size: 21px
+    padding: 10% 0 0 10%
 h3
     font-size: 12px
 p
@@ -26,6 +27,8 @@ p
     background: #242424
     width: 80px
     margin: 25px 0
+    margin-left: 10%
+    margin-bottom: 10%
 $primary-color: #d7123d
 $second-color: #303030
 $third-color: #fff
@@ -54,6 +57,17 @@ body
     left: 50%
 .line-3
     left: 75%
+@media(min-width: 768px)
+    p
+        line-height: 2
+    h3
+        padding: 20px
+@media(min-width: 1200px)
+    h2
+        padding: 5% 0 0 30%
+    .separator
+        margin-left: 30%
+        margin-bottom: 5%
 
 //NAVIGATION
 .nav-mobile-btn-bar
@@ -238,8 +252,6 @@ ul
 .projects
     background-color: $second-color
     color: $primary-color
-    padding: 10%
-    margin-top: 10%
     .line
         display: none
     .mySlides
@@ -247,11 +259,9 @@ ul
     .separator
         background: $primary-color
 .slideshow-container
-    max-width: 1000px
     position: relative
-    a
-        flex: 4
     img
+        padding: 0 10%
         width: 100%
         vertical-align: middle
         filter: grayscale(100%)
@@ -269,24 +279,21 @@ ul
     border-radius: 3px 0 0 30px
 .text
     font-size: 14px
-    padding: 30px 0
+    padding: 30px 10%
     line-height: 21px
-    flex: 1
 .numbertext
     font-size: 56px
     font-weight: 900 !important
 .control-buttons
+    padding: 0 10% 10%
     span
         font-size: 14px
         text-transform: uppercase
         font-weight: 900 !important
 /* Fading animation */
 .fade
-    -webkit-box-orient: vertical
-    flex-direction: column
-    -webkit-box-align: center
-    -ms-flex-align: center
-    align-items: left
+    margin: 0 auto
+    max-width: 600px
     -webkit-animation: slide 1s forwards
     animation: slide 1s forwards
 @-webkit-keyframes slide
@@ -298,18 +305,9 @@ ul
         opacity: 1
         -webkit-transform: translateX(0)
         transform: translateX(0)
-@media (min-width: 1600px)
-    .slideshow-container
-        max-width: 800px
-@media (min-width: 1200px) and (max-width: 1599px)
-    .slideshow-container
-        max-width: 600px
-        padding-left: 3%
-        margin: 0 auto
 @media (min-width: 1200px)
     .projects
         margin: 0
-        padding: 5% 0 10%
         .line
             display: block
             background-color: $third-color
@@ -320,23 +318,33 @@ ul
             &::after
                 background-color: $third-color
     .slideshow-container
-        margin: 0 auto
+        img
+            padding: 0
+            -webkit-transition: filter .5s
+            transition: filter .5s
+            &:hover
+                filter: none
     .text
-        margin-left: 5%
-    .fade
-        -webkit-box-orient: horizontal
-        flex-direction: row
-        align-items: center
-@media (min-width: 768px) and (max-width: 1199px)
-    .projects
-        padding: 10% 22%
+        padding: 30px 0
+    .control-buttons
+        padding: 0 0 80px
+        max-width: 600px
+        margin: 0 auto
+@media (min-width: 576px) and (max-width: 1199px)
+    .text
+        padding: 30px 60px
+    .control-buttons
+        padding: 50px 60px 10%
+        max-width: 600px
+        margin: 0 auto
 
 // KNOWLEDGE
 .knowledge
     .line
         display: none
 .skills-description
-    padding: 10%
+    p
+        padding: 0 10% 5%
 .flex-container
     display: flex
     flex-wrap: wrap
@@ -347,7 +355,7 @@ ul
     padding-bottom: 75%
     perspective: 1000px
 .box
-    width: 70%
+    width: 80%
 .card
     .front, .back
         position: absolute
@@ -397,14 +405,13 @@ ul
         .side-header
             top: 35%
     .skills-description
-        padding: 10% 30%
+        p
+            padding: 0 30% 5%
     .box
-        width: 17%
+        width: 15%
 @media (min-width: 768px) and (max-width: 1199px)
-    .knowledge
-        padding: 0 15%
     .box
-        width: 40%
+        width: 25%
 @media (min-width: 576px) and (max-width: 768px)
     .box
         width: 40%
@@ -414,24 +421,23 @@ ul
     background-color: $primary-color
     .separator
         background: $third-color
-        margin-left: 10%
     .line
         display: none
     h2
         color: $third-color
-        padding: 10% 0 0 10%
 .social-media
     padding-bottom: 15%
     text-align: center
     i
         margin: 10px
-        background-color: $third-color
         width: 40px
         height: 40px
-        border-radius: 2px
+        border-radius: 5%
+        background-color: $third-color
         color: $second-color
         line-height: 40px
         font-size: 21px
+        transition: .5s
 a
     &:-webkit-any-link
         text-decoration: none
@@ -447,11 +453,12 @@ a
                 background-color: $third-color
             &::after
                 background-color: $third-color
-    .contact-content
-        margin: 0 30%
-@media (min-width: 768px) and (max-width: 1199px)
-    .contact-info
-        padding: 0 15%
+    .social-media
+        padding-bottom: 7%
+    i
+        &:hover
+            border-radius: 50%
+            color: $primary-color
 
 // FOOTER
 footer
@@ -461,3 +468,4 @@ footer
     p
         font-size: 11px
         padding: 10px
+        border-top: rgba(255, 255, 255, 0.1) solid 1px
