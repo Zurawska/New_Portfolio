@@ -20,11 +20,16 @@ $(document).ready(function() {
     });
 
     // setting max height for divs in slider
-    var elementHeights = $('.fade').map(function() {
-        return $(this).height();
-    }).get();
-    var maxHeight = Math.max.apply(null, elementHeights);
-    $('.fade').height(maxHeight);
+    function setMaxHeightForDivsInSlider(){
+        $('.fade').height('');
+        var elementHeights = $('.fade').map(function() {
+            return $(this).height();
+        }).get();
+        var maxHeight = Math.max.apply(null, elementHeights);
+        $('.fade').height(maxHeight);
+        console.log(maxHeight);
+    }
+    setMaxHeightForDivsInSlider();
 
     // slider
     var slideIndex = 1;
@@ -68,7 +73,9 @@ $(document).ready(function() {
 	}
     // On window change, recalculate the size of the box
     window.onresize = function(){
+        console.log("resize");
         setBackHeight();
+        setMaxHeightForDivsInSlider();
     };
     setBackHeight();
 
