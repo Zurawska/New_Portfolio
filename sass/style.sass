@@ -57,6 +57,23 @@ body
     left: 50%
 .line-3
     left: 75%
+.letter_A, .letter_P, .letter_S
+    position: absolute
+    width: 320px
+    height: 320px
+    background-size: cover
+    background-position: center center
+    bottom: 50px
+    right: 15%
+    -webkit-animation: resizing 10s linear infinite alternate
+    animation: resizing 10s linear infinite alternate
+@-webkit-keyframes resizing
+    from
+        -webkit-transform: scale(.9)
+        transform: scale(.9)
+    to
+        -webkit-transform: scale(1.2)
+        transform: scale(1.2)
 @media(min-width: 768px)
     p
         line-height: 2
@@ -185,9 +202,7 @@ ul
     .separator
         margin-left: 50%
         transform: translate(-50%,0)
-.side-header
-    display: none
-.get-in-touch
+.side-header, .get-in-touch, .letter_A
     display: none
 @media (min-width: 1200px)
     .slogan
@@ -215,6 +230,9 @@ ul
             padding: 5px
             &:hover
                 color: $primary-color
+    .letter_A
+        display: block
+        background-image: url("../images/letter_A.png")
     .side-header
         display: block
         color: #d7d7d7
@@ -252,9 +270,7 @@ ul
 .projects
     background-color: $second-color
     color: $primary-color
-    .line
-        display: none
-    .mySlides
+    .line, .mySlides, .letter_P
         display: none
     .separator
         background: $primary-color
@@ -317,6 +333,10 @@ ul
                 background-color: $third-color
             &::after
                 background-color: $third-color
+        .letter_P
+            left: 15%
+            display: block
+            background-image: url("../images/letter_P.png")
     .slideshow-container
         img
             box-shadow: 0 14px 48px 0 rgba(0, 0, 0, 0.3), 0 16px 40px 0 rgba(0, 0, 0, 0.3)
@@ -341,7 +361,7 @@ ul
 
 // KNOWLEDGE
 .knowledge
-    .line
+    .line, .letter_S
         display: none
 .skills-description
     p
@@ -424,6 +444,9 @@ ul
             display: block
         .side-header
             top: 35%
+        .letter_S
+            display: block
+            background-image: url("../images/letter_S.png")
     .skills-description
         p
             padding: 0 30% 5%
@@ -438,7 +461,7 @@ ul
 // CONTACT-INFO
 .contact-info
     margin-top: 10%
-    background-color: $primary-color
+    background: linear-gradient(-120deg, rgba(215,18,100,1), rgba(215,18,61,1))
     .separator
         background: $third-color
     .line
